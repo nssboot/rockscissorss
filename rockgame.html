@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<style>
+  body {
+      background-color: #d0e4fe;
+  }
+
+  p {
+      font-family: "Times New Roman";
+      font-size: 20px;
+  }
+
+  .round img {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    align:middle;
+    float:center;
+  }
+
+  .leftimage {
+    width:70%;
+    display: inline-block;
+    float: center;
+  }
+  .righttext { 
+    height: auto;
+    width: 30%;
+    display: inline;
+  }
+
+  #header {
+    background-color:#000099;
+    color:white;
+    text-align:center;
+    padding:5px;
+    }
+  
+  #section {
+    width:1500px;
+    float:left;
+    padding:10px;    
+  }
+  #footer {
+    background-color:#000099;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:2px;
+
+  }
+
+  .myStyle input[type="text"] {
+   height: 11px;
+   font-size: 8px;
+   line-height: 11px;
+  }    
+}
+
+  </style>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-inverse" style="text-align:center">
+  <div class="container-fluid">
+    <div class="navbar-header" style="text-align:center">
+      <a class="navbar-brand" href="#" style="text-align:center"></a>
+        <ul class="nav navbar-nav">          
+          <li><a href="home.html" class>Home</a></li>
+          
+          <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blogs<span class="caret"></span></a> 
+              <ul class="dropdown-menu">
+                <li><a href="blog-1.html">More About Me</a></li>
+                <li><a href="#">Digital Transformation</a></li>
+                <li><a href="#">Product Management in the Media Business</a></li>
+                <li></li>
+              </ul>
+          </li> 
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Portfolio <span class="caret"></span></a> 
+              <ul class="dropdown-menu">
+                  <li class=""><a href="gitcode.html">Github Repos</a></li>
+                  <li class="active"><a href="rockgame.html">Rocks & Scissors</a></li>
+              </ul>
+          </li>        
+        </ul>
+      </div>    
+    </div>    
+  </div>
+</nav>
+
+<div class="col-md-2"> 
+  <div class="panel-body" style="height:20px"></div>
+
+  <div class="table-responsive">  
+    <table id="clicktable" class="table table" width="120">
+      <div class="row">
+      <tr>
+        <td>
+          <figure>      
+          <img src="dlart/trumpannouncement.gif" height="80px" width="120" alt="trumpannouncer">
+          <figcaption>President Trump</figcaption>
+          </figure> 
+        </td>
+      </tr>
+      <tr>    
+        <td>
+          <div class="panel-body" style="height:200px"></div>
+        </td>        
+      </tr>
+      <tr>
+        <td>
+          <figure>      
+            <img src="dlart/elkisser.gif" height="80px" width="120" alt="elk">
+            <figcaption>White Corner: Buddy Elk</figcaption>
+          </figure> 
+        </td>
+      </tr>        
+    </table>
+  </div>
+</div>
+<div class="col-md-3"></div>
+<div id="photos" class="col-md-2">
+  <div class="table-responsive">  
+    <table id="clicktable" class="table table" width="120">        
+      <div class="row" style="align:center"><tr><td>
+        <figure> <img src="dlart/evilletthegamebegin.gif" alt="evilletthegamebegin" style="align:center">     
+          <figcaption>
+              <button id="play">Play</button>
+              <button id="pause">Stop</button>
+          </figcaption>
+        </figure></td></tr> 
+
+
+        <tr>
+          <td>
+          <div class="row">
+            <button class="btn" id="wordBtn">Shalom or Sayonara?</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+          <div class="row">           
+            <strong>Elk Score: </strong><span id="userScore" margin-left="9px">0</span>
+            <br />
+            <button class="btn btn-info" data-tag="userScore">Elk Score Up</button>
+          </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+          <div>
+              <strong>Grinch Score Up: </strong><span id="computerScore">0</span>
+              <br />
+              <button class="btn btn-info" data-tag="computerScore">Grinch's Score up!</button>
+          </div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+          </div>          
+            <strong>Round Count: </strong><span id="roundCount">1</span>
+            <br />
+            <button class="btn btn-info" data-tag="roundCount">Round Count Up!</button>
+          </div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <div class="row">                
+                <div class="col-md-1">
+                  <button class="btn btn-primary"></button>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Game Alert</h4>
+                  </div>
+                  <div class="modal-body"></div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </div>       
+    </table>
+  </div>
+ </div>  
+
+<div class="col-md-3"></div>
+
+<div class="col-md-2"> 
+  <div class="panel-body" style="height:20px"></div>
+
+  <div class="table-responsive">  
+    <table id="clicktable" class="table table" width="120">
+      <div class="row">
+      <tr>
+        <td>
+          <figure>      
+          <img src="dlart/reindeer.gif" height="80px" width="120" text-align:"right"alt="reindeer">
+          <figcaption>Red Corner: Reindeer</figcaption>
+          </figure> 
+        </td>
+      </tr>
+      <tr>    
+        <td>
+          <div class="panel-body" style="height:200px"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <figure>      
+            <img src="dlart/grinch2.gif" height="80px" width="120" alt="grinch">
+            <figcaption>Green Corner: Grinch</figcaption>
+          </figure> 
+        </td>
+      </tr>        
+    </table>
+  </div>
+</div>
+  
+
+
+</div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!--script type="text/javascript" src="js/randomString.js"></script>
+  <script type="text/javascript" src="js/scoreTracker.js"></script-->
+  <script type="text/javascript" src="js/rockjs/ganimation.js"></script>
+  <script type="text/javascript" src="js/rockjs/shalomSayonara.js"></script>
+  <script type="text/javascript" src="js/rockjs/scoreCard.js"></script>
+  <script type="text/javascript" src="js/rockjs/surpriseChoice.js"></script>
+
+  <footer>
+      <div class="navbar navbar-default navbar-inverse navbar-fixed-bottom">
+        <div class="container-fluid">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group" style="text-align:center"></div>
+            <button type="default" class="btn btn-default"><h7>Stack Overflow: nssboot</h7></button>
+            <button type="default" class="btn btn-default"><h7>Twitter:  @RajSarmaTweet<h7></button>
+            <button type="default" class="btn btn-default"><h7>https://www.linkedin.com/in/nagarajsarma</h7></button>          
+            <button type="default" class="btn btn-default"><h7> nagarajsarma@gmail.com</h7></button>
+        </form> 
+      </div>
+    </footer> 
+
+
+</body>
+</html>

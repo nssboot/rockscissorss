@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#photos {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;  
+  column-count: 3;
+  column-gap: 0px;
+}
+
+#photos img {
+  width: 100% !important;
+  height: auto !important;
+  margin: 5px 10px;
+  opacity: 0.2;
+  -webkit-transition: opacity 0.2s ease-in-out;  
+  transition: opacity 0.2s ease-in-out;
+}
+
+#photos img.loaded {
+  opacity: 1;
+}
