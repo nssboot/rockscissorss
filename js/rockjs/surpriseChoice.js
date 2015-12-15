@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  var 3Words = ["Rock", "Paper", "Scissors"];
+  var threeWords = ["Rock", "Paper", "Scissors"];
 
   $("#pickaWordBtn").on("click", function() {
-    var Randomizer = Math.floor(Math.random() * 3Words.length);
+    var Randomizer = Math.floor(Math.random() * threeWords.length);
     $("h1").fadeIn(500, function() {
-      $(this).html(3Words[Randomizer]);
+      $(this).html(threeWords[Randomizer]);
       $(this).fadeOut(1000);
     });
     

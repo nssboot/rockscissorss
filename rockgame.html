@@ -4,73 +4,19 @@
   <title>Rock, Paper, Scissors</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css" /> <!-- Call Bootstrap first -->
+  <link rel="stylesheet" href="css/bootstrap-override.css" /> <!-- Call override CSS second -->
+  <link rel="stylesheet" href="css/animationstyle.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<style>
-  body {
-      background-color: #d0e4fe;
-  }
-
-  p {
-      font-family: "Times New Roman";
-      font-size: 20px;
-  }
-
-  .round img {
-    display: block;
-    min-width: 100%;
-    min-height: 100%;
-    align:middle;
-    float:center;
-  }
-
-  .leftimage {
-    width:70%;
-    display: inline-block;
-    float: center;
-  }
-  .righttext { 
-    height: auto;
-    width: 30%;
-    display: inline;
-  }
-
-  #header {
-    background-color:#000099;
-    color:white;
-    text-align:center;
-    padding:5px;
-    }
-  
-  #section {
-    width:1500px;
-    float:left;
-    padding:10px;    
-  }
-  #footer {
-    background-color:#000099;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:2px;
-
-  }
-
-  .myStyle input[type="text"] {
-   height: 11px;
-   font-size: 8px;
-   line-height: 11px;
-  }    
-}
-
-  </style>
-
-
+<style>  </style>
 </head>
+
+
 <body>
 
-<nav class="navbar navbar-default navbar-inverse" style="text-align:center">
+<!--nav class="navbar navbar-default navbar-inverse navbar-fixed-top" style="text-align:center">
   <div class="container-fluid">
     <div class="navbar-header" style="text-align:center">
       <a class="navbar-brand" href="#" style="text-align:center"></a>
@@ -97,179 +43,190 @@
       </div>    
     </div>    
   </div>
-</nav>
+</nav-->
 
-<div class="col-md-2"> 
-  <div class="panel-body" style="height:20px"></div>
+<div class="container">
+  <div class="col-md-2"> 
+    <div class="panel-body" style="height:35px"></div>
 
-  <div class="table-responsive">  
-    <table id="clicktable" class="table table" width="120">
-      <div class="row">
-      <tr>
-        <td>
-          <figure>      
-          <img src="dlart/trumpannouncement.gif" height="80px" width="120" alt="trumpannouncer">
-          <figcaption>President Trump</figcaption>
-          </figure> 
+    <div class="table-responsive">  
+      <table id="clicktable" class="table table" width="120" border:"none">
+        <div class="row">
+        <tr><td>
+            <br><br><br>
+            <figure>      
+            <img id="trump" src="dlart/trumpannouncement.gif" height="80px" width="120" alt="trumpannouncer">
+            <figcaption>Announcer</figcaption>
+            </figure> 
         </td>
-      </tr>
-      <tr>    
-        <td>
-          <div class="panel-body" style="height:200px"></div>
-        </td>        
-      </tr>
-      <tr>
-        <td>
-          <figure>      
-            <img src="dlart/elkisser.gif" height="80px" width="120" alt="elk">
-            <figcaption>White Corner: Buddy Elk</figcaption>
-          </figure> 
-        </td>
-      </tr>        
-    </table>
-  </div>
-</div>
-<div class="col-md-3"></div>
-<div id="photos" class="col-md-2">
-  <div class="table-responsive">  
-    <table id="clicktable" class="table table" width="120">        
-      <div class="row" style="align:center"><tr><td>
-        <figure> <img src="dlart/evilletthegamebegin.gif" alt="evilletthegamebegin" style="align:center">     
-          <figcaption>
-              <button id="play">Play</button>
-              <button id="pause">Stop</button>
-          </figcaption>
-        </figure></td></tr> 
 
-
+        <tr>    
+          <td>
+            <div class="panel-body" style="height:170px"></div>
+          </td>        
+        </tr>
+        
         <tr>
           <td>
+            <figure>  
+              <img src="dlart/white.png" height="25px" width="25" text-align:"right"alt="white"><br><br>     
+              <img id="elk" src="dlart/elk.gif" height="80px" width="120" alt="elk">
+              <figcaption> Buddy Elk</figcaption>
+            </figure> 
+          </td>
+        </tr>        
+      </table>
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+   
+    <div class="row">   
+      <div class="col span_4_of_6 margin_auto float_none align_center large_bottom_margin right_padding"> 
+          <p><h4>EVIL BY DESIGN</h4></p><p></p> 
+          <figure> <img src="dlart/evilletthegamebegin.gif" alt="evilletthegamebegin" style="align:center">     
+            <figcaption>
+                <button id="play">Play</button>
+                <button id="pause">Stop</button>
+            </figcaption>
+          </figure>
+      </div>
+    </div>
+
+    <div class="row"> 
+      <div class="col span_5_of_6 margin_auto float_none align_left large_bottom_margin left_padding">         
+        <h6>
+        <form id="selectPlayer"><strong>Select</strong>
+          <label class="radio-inline"/>
+            <input type="radio" name="optradio" id="rudrad" ng-model="content" value="1"/>Rudolph
+              </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" id="grirad" ng-model="content" value="2"/>Grinch
+              </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" id="budrad" ng-model="content" value="3"/>Buddy
+              </label>          
+        </form>
+        </h6>
+
+        <!--div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-default">
+                        <input type="radio" name="options" id="opt_ord" ng-model="content" value="1">Ord
+              </label>
+
+              <label class="btn btn-default">
+                         <input type="radio" name="options" id="opt_int1" ng-model="content" value="2">Int (1)
+              </label>
+
+              <label class="btn btn-default">
+                          <input type="radio" name="options" id="opt_int2" ng-model="content" value="3">Int (2)
+              </label>
+
+              <label class="btn btn-default">
+                          <input type="radio" name="options" id="opt_adv1" ng-model="content" value="4">Adv (1)
+              </label>
+
+              <label class="btn btn-default">
+                          <input type="radio" name="options" id="opt_adv2" ng-model="content" value="5">Adv (2)
+              </label>
+        </div-->
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col span_4_of_6 margin_auto float_none align_center large_bottom_margin right_padding">         
+        <p><a href="#" id="changeWordBtn" class="btn btn-danger" role="button">Evil Pick</a></p>          
+      </div>
+      <div class="col span_4_of_6 margin_auto float_none align_center large_bottom_margin right_padding">      <h1></h1>     
+      </div>      
+    </div>
+
+    <div class="row">      
+     
+      <div class="card col span_4_of_6 margin_auto float_none align_left large_bottom_margin left_padding">  
+        <h5 id="selected"><strong>Pick Below:</strong></h5>
+      </div>
+    </div>
+
+    <div class="row"> 
+      <div class="card col span_4_of_6 margin_auto float_none align_left large_bottom_margin right_padding">  
+        <h5 padding="5px"><strong>Evil picked:   </strong></h5>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card col span_4_of_6 margin_auto float_none align_left large_bottom_margin right_padding">  
+        <h5><strong>Winner is:   </strong></h5>
+      </div>
+    </div>
+        
+    <div class="row">
+      <div class="col span_4_of_6 margin_auto float_none align_center large_bottom_margin right_padding"> 
+        <h3></h3>
+        <p><a href="#" class="btn btn-success btn-block" role="button">Rock</a></p>     
+
+        <p><a href="#" class="btn btn-info btn-block" role="button">Paper</a></p>      
+
+        <p><a href="#" class="btn btn-primary btn-block" role="button">Scissors</a></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card col span_4_of_6 margin_auto float_none align_center large_bottom_margin right_padding">  
+        <h6><button class="btn btn-warning" data-tag="roundCount">Rounds Up</button></h6> 
+      </div>
+    </div>
+    
+  </div>    
+
+  <div class="col-md-2"></div>
+  <div class="col-md-2">
+    <div class="panel-body" style="height:20px"></div>
+      <div class="table-responsive">  
+        <table id="clicktable" class="table table" width="120">
           <div class="row">
-            <button class="btn" id="wordBtn">Shalom or Sayonara?</button>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-          <div class="row">           
-            <strong>Elk Score: </strong><span id="userScore" margin-left="9px">0</span>
-            <br />
-            <button class="btn btn-info" data-tag="userScore">Elk Score Up</button>
-          </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-          <div>
-              <strong>Grinch Score Up: </strong><span id="computerScore">0</span>
-              <br />
-              <button class="btn btn-info" data-tag="computerScore">Grinch's Score up!</button>
-          </div>
-          </td>
-        </tr>
-
-
-        <tr>
-          <td>
-          </div>          
-            <strong>Round Count: </strong><span id="roundCount">1</span>
-            <br />
-            <button class="btn btn-info" data-tag="roundCount">Round Count Up!</button>
-          </div>
-          </td>
-        </tr>
-
-
-        <tr>
-          <td>
-            <div class="row">                
-                <div class="col-md-1">
-                  <button class="btn btn-primary"></button>
-                </div>
-              </div>
-            </div>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Game Alert</h4>
-                  </div>
-                  <div class="modal-body"></div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </div>       
-    </table>
+          <tr>
+            <td> 
+              <figure>  
+                <br>
+                <img src="dlart/red2.png" height="25px" width="25" text-align:"right"alt="red"><br><br>
+                <img id="reindeer" src="dlart/reindeer2.gif" height="80px" width="120" text-align:"right"alt="reindeer">
+                <figcaption> Rudolph</figcaption>
+              </figure> 
+            </td></tr>
+          <tr>    
+            <td>
+              <div class="panel-body" style="height:128px"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <figure> 
+                <br><br>
+                  <img src="dlart/green.png" height="25px" width="25" text-align:"right"alt="green"><br><br>
+                  <img id="grinch" src="dlart/grinch2.gif" height="80px" width="120" alt="grinch">
+                  <figcaption> Grinch</figcaption>
+              </figure> 
+            </td>
+          </tr>        
+        </table>
+        <div>          
+            <h6><a href="home.html">  Return to home page</a></h6>
+        </div>      
+      </div>      
+    </div>     
   </div>
- </div>  
-
-<div class="col-md-3"></div>
-
-<div class="col-md-2"> 
-  <div class="panel-body" style="height:20px"></div>
-
-  <div class="table-responsive">  
-    <table id="clicktable" class="table table" width="120">
-      <div class="row">
-      <tr>
-        <td>
-          <figure>      
-          <img src="dlart/reindeer.gif" height="80px" width="120" text-align:"right"alt="reindeer">
-          <figcaption>Red Corner: Reindeer</figcaption>
-          </figure> 
-        </td>
-      </tr>
-      <tr>    
-        <td>
-          <div class="panel-body" style="height:200px"></div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <figure>      
-            <img src="dlart/grinch2.gif" height="80px" width="120" alt="grinch">
-            <figcaption>Green Corner: Grinch</figcaption>
-          </figure> 
-        </td>
-      </tr>        
-    </table>
-  </div>
-</div>
   
-
-
-</div>
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <!--script type="text/javascript" src="js/randomString.js"></script>
   <script type="text/javascript" src="js/scoreTracker.js"></script-->
   <script type="text/javascript" src="js/rockjs/ganimation.js"></script>
-  <script type="text/javascript" src="js/rockjs/shalomSayonara.js"></script>
-  <script type="text/javascript" src="js/rockjs/scoreCard.js"></script>
-  <script type="text/javascript" src="js/rockjs/surpriseChoice.js"></script>
-
-  <footer>
-      <div class="navbar navbar-default navbar-inverse navbar-fixed-bottom">
-        <div class="container-fluid">
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group" style="text-align:center"></div>
-            <button type="default" class="btn btn-default"><h7>Stack Overflow: nssboot</h7></button>
-            <button type="default" class="btn btn-default"><h7>Twitter:  @RajSarmaTweet<h7></button>
-            <button type="default" class="btn btn-default"><h7>https://www.linkedin.com/in/nagarajsarma</h7></button>          
-            <button type="default" class="btn btn-default"><h7> nagarajsarma@gmail.com</h7></button>
-        </form> 
-      </div>
-    </footer> 
-
+  <script type="text/javascript" src="js/rockjs/all3functions3.js"></script>
+  <!--script type="text/javascript" src="js/rockjs/scoreCard.js"></script>
+  <script type="text/javascript" src="js/rockjs/surpriseChoice.js"></script-->
 
 </body>
 </html>
